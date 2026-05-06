@@ -3,6 +3,8 @@ import { CheckCircle2, ArrowRight, Loader2 } from "lucide-react";
 import { db } from "../firebase";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import React from "react";
+import { usePlacesWidget } from "react-google-autocomplete";
+
 
 const fade = {
   initial: { opacity: 0, y: 24 },
@@ -30,6 +32,16 @@ const Pilot = () => {
   const [loading, setLoading] = React.useState(false);
   const [submitted, setSubmitted] = React.useState(false);
   const [error, setError] = React.useState("");
+
+  const { ref: materialRef } = usePlacesWidget({
+    apiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY || "YOUR_API_KEY_HERE",
+    onPlaceSelected: (place: any) => {
+      setFormData((prev) => ({ ...prev, location: place.formatted_address || place.name || "" }));
+    },
+    options: {
+      componentRestrictions: { country: "za" },
+    },
+  });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -140,12 +152,14 @@ const Pilot = () => {
                     <div>
                       <label className="block text-sm font-bold text-slate-700 mb-2">Where do you trade? (optional)</label>
                       <input
+                        ref={materialRef as any}
                         type="text"
-                        placeholder="e.g. Johannesburg, Pretoria, Soweto…"
-                        value={formData.location}
+                        defaultValue={formData.location}
                         onChange={(e) => setFormData({ ...formData, location: e.target.value })}
+                        placeholder="e.g. Johannesburg, Pretoria, Soweto…"
                         className="w-full rounded-xl border border-slate-200 bg-white px-5 py-4 text-slate-900 placeholder:text-slate-400 outline-none focus:border-indigo-400 focus:ring-4 focus:ring-indigo-100 transition"
                       />
+                      <p className="text-xs text-slate-400 mt-1">Start typing to search for a location</p>
                     </div>
                     {error && <p className="text-sm text-red-600 font-medium">{error}</p>}
                     <button
