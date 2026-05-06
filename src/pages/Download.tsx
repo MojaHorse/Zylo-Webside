@@ -10,8 +10,11 @@ import {
   Clock, 
   CheckCircle2,
   ShieldCheck,
-  Zap
+  Zap,
+  Loader2
 } from "lucide-react";
+import { db } from "../firebase";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 
 const fade = {
   initial: { opacity: 0, y: 24 },
@@ -53,12 +56,30 @@ const DeviceCard = ({
 const Download = () => {
   const [email, setEmail] = React.useState("");
   const [submitted, setSubmitted] = React.useState(false);
+  const [loading, setLoading] = React.useState(false);
+  const [error, setError] = React.useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email) {
+    if (!email) return;
+
+    setLoading(true);
+    setError("");
+
+    try {
+      await addDoc(collection(db, "waitlist"), {
+        email: email,
+        timestamp: serverTimestamp(),
+        source: "download_page",
+        platform: navigator.userAgent
+      });
       setSubmitted(true);
       setEmail("");
+    } catch (err) {
+      console.error("Error adding document: ", err);
+      setError("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -149,11 +170,17 @@ const Download = () => {
                     />
                     <button
                       type="submit"
-                      className="flex items-center justify-center gap-2 rounded-2xl bg-white px-8 py-4 font-black text-indigo-600 shadow-xl transition-all hover:scale-[1.02] active:scale-95 shrink-0"
+                      disabled={loading}
+                      className="flex items-center justify-center gap-2 rounded-2xl bg-white px-8 py-4 font-black text-indigo-600 shadow-xl transition-all hover:scale-[1.02] active:scale-95 shrink-0 disabled:opacity-70 disabled:hover:scale-100"
                     >
-                      Join <ArrowRight size={20} />
+                      {loading ? (
+                        <Loader2 size={20} className="animate-spin" />
+                      ) : (
+                        <>Join <ArrowRight size={20} /></>
+                      )}
                     </button>
                   </div>
+                  {error && <p className="mt-4 text-sm text-red-200 font-medium">{error}</p>}
                   <p className="mt-4 text-xs text-indigo-200 flex items-center justify-center gap-1.5">
                     <ShieldCheck size={14} /> Your data is safe. No spam, ever.
                   </p>

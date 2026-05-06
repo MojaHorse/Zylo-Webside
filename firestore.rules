@@ -1,0 +1,22 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Waitlist collection: allow anyone to join, but nobody to read/list
+    match /waitlist/{entry} {
+      allow create: if true;
+      allow read, update, delete: if false;
+    }
+
+    // Pilot applications collection: allow anyone to apply, but nobody to read/list
+    match /pilot_applications/{application} {
+      allow create: if true;
+      allow read, update, delete: if false;
+    }
+
+    // Default deny for everything else
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
