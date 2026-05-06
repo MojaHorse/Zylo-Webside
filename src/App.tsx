@@ -7,6 +7,7 @@ import Pricing from "./pages/Pricing";
 import About from "./pages/About";
 import Pilot from "./pages/Pilot";
 import Contact from "./pages/Contact";
+import Download from "./pages/Download";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/pilot" element={<Pilot />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/download" element={<Download />} />
         </Routes>
       </MainLayout>
     </Router>

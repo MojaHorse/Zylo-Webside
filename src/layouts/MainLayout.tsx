@@ -9,6 +9,7 @@ const navLinks = [
   { name: "Pricing", path: "/pricing" },
   { name: "About", path: "/about" },
   { name: "Pilot", path: "/pilot" },
+  { name: "Download", path: "/download" },
   { name: "Contact", path: "/contact" },
 ];
 
@@ -183,6 +184,14 @@ const Footer = () => {
                   className="text-slate-600 hover:text-indigo-600 transition-colors"
                 >
                   Pilot
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/download"
+                  className="text-slate-600 hover:text-indigo-600 transition-colors"
+                >
+                  Download
                 </Link>
               </li>
               <li>
