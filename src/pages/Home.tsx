@@ -308,21 +308,35 @@ const PricingPreview = () => (
       </motion.div>
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {[
-          { name: "Free", desc: "For traders getting started", items: ["Basic sales recording", "Simple product list", "Daily totals", "Basic reports"] },
-          { name: "Trader", desc: "For active everyday sellers", items: ["Unlimited sales history", "Stock tracking", "Receipts", "Weekly & monthly reports"], highlight: true },
-          { name: "Business", desc: "For small shops and teams", items: ["Staff access", "Cash-up", "Inventory tools", "Advanced reports"] },
-          { name: "Growth", desc: "For businesses ready to expand", items: ["Multi-branch support", "Advanced permissions", "Exports", "Priority support"] },
+          { name: "Solo", price: "R74.99", period: "/mo", desc: "Your first real business system.", items: ["Mobile only", "1 staff member", "Up to 25 products", "Basic stock tracking", "30 days sales history"] },
+          { name: "Trader", price: "R149.99", period: "/mo", desc: "For active everyday sellers.", items: ["Multi-device support", "3 staff accounts", "Unlimited products", "Recipe management", "90 days sales history"], highlight: true },
+          { name: "Business", price: "R449.99", period: "/mo", desc: "For small shops and teams.", items: ["Automated inventory tracking", "15 staff accounts", "5 POS terminals", "PDF & CSV exporting", "3 years sales history"] },
+          { name: "Growth", price: "R999.99", period: "/mo", desc: "For businesses ready to expand.", items: ["Unlimited terminals", "Unlimited staff", "Unlimited sales history", "Priority support", "Multi-location ready"] },
         ].map((p) => (
           <div key={p.name} className={`rounded-[1.5rem] p-7 flex flex-col ${p.highlight ? "bg-indigo-600 text-white ring-4 ring-indigo-200 shadow-xl" : "bg-white text-slate-900 ring-1 ring-slate-100 shadow-sm"}`}>
             <h3 className="text-xl font-black mb-1">{p.name}</h3>
-            <p className={`text-sm mb-6 ${p.highlight ? "text-indigo-100" : "text-slate-500"}`}>{p.desc}</p>
-            <ul className="space-y-3 flex-1">
+            <p className={`text-sm mb-4 ${p.highlight ? "text-indigo-100" : "text-slate-500"}`}>{p.desc}</p>
+            <div className="flex items-baseline gap-1 mb-6">
+              <span className="text-3xl font-black">{p.price}</span>
+              <span className={`text-sm ${p.highlight ? "text-indigo-200" : "text-slate-450 text-slate-400"}`}>{p.period}</span>
+            </div>
+            <ul className="space-y-3 flex-1 mb-6">
               {p.items.map((item) => (
                 <li key={item} className="flex items-center gap-2.5 text-sm font-medium">
-                  <CheckCircle2 size={15} className={p.highlight ? "text-indigo-200" : "text-indigo-500"} /> {item}
+                  <CheckCircle2 size={15} className={p.highlight ? "text-indigo-200 shrink-0" : "text-indigo-500 shrink-0"} /> {item}
                 </li>
               ))}
             </ul>
+            <Link
+              to="/pilot"
+              className={`block w-full py-3.5 rounded-xl font-bold text-center transition-all active:scale-95 text-sm ${
+                p.highlight
+                  ? "bg-white text-indigo-600 hover:bg-indigo-50"
+                  : "bg-indigo-600 text-white hover:bg-indigo-700"
+              }`}
+            >
+              Join Waitlist
+            </Link>
           </div>
         ))}
       </div>
