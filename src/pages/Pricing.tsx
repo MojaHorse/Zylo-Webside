@@ -56,7 +56,7 @@ const Pricing = () => (
             Simple pricing for real businesses.
           </h1>
           <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-            ZYLO is being designed to stay affordable for small and growing traders.
+            Brioo is being designed to stay affordable for small and growing traders.
           </p>
         </motion.div>
       </div>

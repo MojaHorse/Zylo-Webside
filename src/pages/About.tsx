@@ -25,7 +25,7 @@ const About = () => (
             these businesses are real, active, and hardworking — but they often operate
             without proper sales records, stock tracking, receipts, or business reports.
           </p>
-          <p className="mt-6 text-xl text-slate-300 font-semibold">ZYLO was created to change that.</p>
+          <p className="mt-6 text-xl text-slate-300 font-semibold">BRIOO was created to change that.</p>
         </motion.div>
       </div>
     </section>
@@ -40,7 +40,7 @@ const About = () => (
             how their business is growing over time.
           </p>
           <p className="text-lg text-slate-600 leading-relaxed">
-            ZYLO is not here to make trading complicated. It is here to make business
+            BRIOO is not here to make trading complicated. It is here to make business
             management easier, clearer, and more accessible.
           </p>
         </motion.div>
@@ -88,7 +88,7 @@ const About = () => (
             From informal to growth-ready.
           </h2>
           <p className="text-lg text-slate-600 leading-relaxed mb-4">
-            ZYLO does not force traders to become formal overnight. Instead, we help traders
+            BRIOO does not force traders to become formal overnight. Instead, we help traders
             build better records step by step.
           </p>
           <p className="text-lg text-slate-600 leading-relaxed mb-6">
@@ -110,13 +110,13 @@ const About = () => (
     <section className="py-20 lg:py-28 bg-slate-50">
       <div className="mx-auto max-w-4xl px-6 lg:px-8">
         <motion.div {...fade}>
-          <p className="text-sm font-black uppercase tracking-widest text-indigo-600 mb-4">Why We Built ZYLO</p>
+          <p className="text-sm font-black uppercase tracking-widest text-indigo-600 mb-4">Why We Built BRIOO</p>
           <h2 className="text-4xl font-black text-slate-900 mb-8 leading-tight">
             Small traders are real business owners.
           </h2>
           <div className="space-y-5 text-lg text-slate-600 leading-relaxed">
             <p>
-              ZYLO was created from a simple belief: small traders are real business owners,
+              BRIOO was created from a simple belief: small traders are real business owners,
               even when they do not have formal systems.
             </p>
             <p>

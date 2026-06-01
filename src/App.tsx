@@ -8,6 +8,8 @@ import About from "./pages/About";
 import Pilot from "./pages/Pilot";
 import Contact from "./pages/Contact";
 import Download from "./pages/Download";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService";
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
           <Route path="/pilot" element={<Pilot />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/download" element={<Download />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="/terms" element={<TermsOfService />} />
         </Routes>
       </MainLayout>
     </Router>

@@ -93,11 +93,11 @@ const Download = () => {
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8 text-center">
           <motion.div {...fade}>
             <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-indigo-100 bg-white px-5 py-2 text-sm font-bold text-indigo-600 shadow-sm">
-              <DownloadIcon size={15} /> Get the ZYLO App
+              <DownloadIcon size={15} /> Get the BRIOO App
             </p>
 
             <h1 className="mx-auto max-w-4xl text-5xl font-black leading-[1.08] tracking-tight text-slate-900 md:text-7xl">
-              Zylo is coming to{" "}
+              Brioo is coming to{" "}
               <span className="bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent">
                 all your devices.
               </span>
@@ -154,7 +154,7 @@ const Download = () => {
                 Join the Waitlist
               </h2>
               <p className="text-lg text-indigo-100 mb-10 max-w-xl mx-auto">
-                We're putting the finishing touches on the ZYLO apps. Enter your email to get early access and exclusive launch updates.
+                We're putting the finishing touches on the BRIOO apps. Enter your email to get early access and exclusive launch updates.
               </p>
 
               {!submitted ? (
@@ -195,7 +195,7 @@ const Download = () => {
                     <CheckCircle2 size={32} />
                   </div>
                   <h3 className="text-2xl font-bold mb-2">You're on the list!</h3>
-                  <p className="text-indigo-100">We'll notify you as soon as ZYLO is ready for your device.</p>
+                  <p className="text-indigo-100">We'll notify you as soon as BRIOO is ready for your device.</p>
                 </motion.div>
               )}
             </motion.div>

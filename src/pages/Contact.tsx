@@ -90,7 +90,7 @@ const Contact = () => (
               </div>
               <h3 className="font-bold text-slate-900">Email Us</h3>
             </div>
-            <p className="text-slate-600">hello@zylo.co.za</p>
+            <p className="text-slate-600">hello@briooapp.com</p>
           </div>
 
           <div className="rounded-2xl bg-slate-50 p-7 ring-1 ring-slate-100">
@@ -104,7 +104,7 @@ const Contact = () => (
           </div>
 
           <div className="rounded-2xl bg-indigo-600 p-7 text-white">
-            <h3 className="font-black text-lg mb-3">Want to test ZYLO?</h3>
+            <h3 className="font-black text-lg mb-3">Want to test BRIOO?</h3>
             <p className="text-indigo-100 mb-5 text-sm leading-relaxed">
               Join the trader pilot to get early access and help shape the platform.
             </p>

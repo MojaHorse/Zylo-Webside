@@ -14,7 +14,7 @@ const fade = {
 };
 
 const pilotPerks = [
-  "Test ZYLO for free",
+  "Test BRIOO for free",
   "Record real sales",
   "Add products",
   "Track daily totals",
@@ -70,9 +70,9 @@ const Pilot = () => {
         <div className="relative mx-auto max-w-4xl px-6 text-center">
           <motion.div {...fade}>
             <p className="text-sm font-black uppercase tracking-widest text-indigo-200 mb-4">Early Access</p>
-            <h1 className="text-5xl font-black md:text-7xl mb-6">Join the ZYLO Trader Pilot.</h1>
+            <h1 className="text-5xl font-black md:text-7xl mb-6">Join the BRIOO Trader Pilot.</h1>
             <p className="text-xl text-indigo-100 max-w-2xl mx-auto">
-              We are currently looking for early traders to test ZYLO and help shape the
+              We are currently looking for early traders to test BRIOO and help shape the
               future of the platform.
             </p>
           </motion.div>
@@ -186,7 +186,7 @@ const Pilot = () => {
                   </div>
                   <h2 className="text-3xl font-black text-slate-900 mb-4">Application Received!</h2>
                   <p className="text-lg text-slate-600 leading-relaxed">
-                    Thank you for applying for the ZYLO Trader Pilot. We'll review your
+                    Thank you for applying for the BRIOO Trader Pilot. We'll review your
                     details and reach out to you soon via {formData.contact.includes("@") ? "email" : "WhatsApp"}.
                   </p>
                   <button

@@ -21,7 +21,7 @@ const coreFeatures = [
   { icon: Calculator, title: "Cash-Up Support", text: "Help business owners and staff compare expected cash with actual cash at the end of the day." },
   { icon: FileText, title: "Business Reports", text: "Understand your best-selling products, daily totals, and overall business performance." },
   { icon: Users, title: "Staff Access", text: "Allow staff members to use the POS with controlled permissions." },
-  { icon: Building2, title: "Multi-Business Ready", text: "ZYLO is built as a SaaS platform, meaning different businesses can use the system securely while keeping their data separate." },
+  { icon: Building2, title: "Multi-Business Ready", text: "BRIOO is built as a SaaS platform, meaning different businesses can use the system securely while keeping their data separate." },
 ];
 
 const differentiators = [
@@ -48,7 +48,7 @@ const Features = () => (
             Everything you need to start selling smarter.
           </h1>
           <p className="text-xl text-indigo-100 max-w-2xl mx-auto">
-            ZYLO is a simple mobile POS that helps traders record sales, manage products,
+            BRIOO is a simple mobile POS that helps traders record sales, manage products,
             track stock, and view daily business performance.
           </p>
         </motion.div>
@@ -83,7 +83,7 @@ const Features = () => (
     <section className="py-20 lg:py-28 bg-slate-50">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <motion.div {...fade} className="max-w-3xl mb-14">
-          <p className="text-sm font-black uppercase tracking-widest text-indigo-600 mb-4">Why ZYLO Is Different</p>
+          <p className="text-sm font-black uppercase tracking-widest text-indigo-600 mb-4">Why BRIOO Is Different</p>
           <h2 className="text-4xl font-black text-slate-900 md:text-5xl leading-tight">
             Built for everyday traders first.
           </h2>
@@ -119,7 +119,7 @@ const Features = () => (
         <div className="grid gap-10 md:grid-cols-3 text-center">
           {[
             { icon: Shield, title: "Secure & Private", text: "Your data is encrypted and kept safe at all times." },
-            { icon: Smartphone, title: "Android & iOS", text: "Run ZYLO on any modern smartphone or tablet." },
+            { icon: Smartphone, title: "Android & iOS", text: "Run BRIOO on any modern smartphone or tablet." },
             { icon: Headphones, title: "Trader Support", text: "We're here to help via WhatsApp, email, or call." },
           ].map((item) => (
             <div key={item.title}>

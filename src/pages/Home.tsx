@@ -34,7 +34,7 @@ const Hero = () => (
         </h1>
 
         <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-slate-600 md:text-xl">
-          ZYLO is a simple POS platform for everyday traders and small businesses.
+          BRIOO is a simple POS platform for everyday traders and small businesses.
           Sell faster, track your stock, record daily income, manage your business,
           and build a reliable trading history — all from your phone.
         </p>
@@ -63,11 +63,11 @@ const Explainer = () => (
   <section className="py-20 lg:py-28 bg-white">
     <motion.div {...fade} className="mx-auto max-w-4xl px-6 lg:px-8 text-center">
       <h2 className="text-3xl font-black text-slate-900 md:text-4xl">
-        ZYLO helps everyday traders sell, track, and grow.
+        BRIOO helps everyday traders sell, track, and grow.
       </h2>
       <p className="mt-6 text-lg leading-relaxed text-slate-600 max-w-3xl mx-auto">
         Whether you run a food stall, caravan kitchen, spaza shop, clothing stand,
-        salon, car wash, or small store — ZYLO gives you simple tools to record sales,
+        salon, car wash, or small store — BRIOO gives you simple tools to record sales,
         manage products, track stock, and understand how your business is doing.
       </p>
       <p className="mt-4 text-lg font-semibold text-slate-800">
@@ -116,7 +116,7 @@ const Problem = () => (
             ))}
           </div>
           <p className="mt-6 text-lg font-semibold text-indigo-600">
-            ZYLO helps traders start building a proper business record — one sale at a time.
+            BRIOO helps traders start building a proper business record — one sale at a time.
           </p>
         </motion.div>
       </div>
@@ -133,13 +133,13 @@ const Solution = () => (
         A POS made for real-world trading.
       </h2>
       <p className="mt-6 text-lg text-slate-600 leading-relaxed max-w-3xl mx-auto">
-        ZYLO is a simple mobile POS that helps traders record sales, manage products,
+        BRIOO is a simple mobile POS that helps traders record sales, manage products,
         track stock, and view daily business performance. It is designed for people
         who need speed, simplicity, and affordability — not complicated software that
         requires training, expensive equipment, or a full office setup.
       </p>
       <p className="mt-6 text-lg text-slate-600 leading-relaxed max-w-3xl mx-auto">
-        With ZYLO, a trader can open the app, make a sale, record payment, update stock,
+        With BRIOO, a trader can open the app, make a sale, record payment, update stock,
         and view daily totals <span className="font-bold text-slate-900">in seconds</span>.
       </p>
     </motion.div>
@@ -158,9 +158,9 @@ const WhoItsFor = () => (
     <div className="mx-auto max-w-7xl px-6 lg:px-8">
       <motion.div {...fade} className="text-center mb-14">
         <p className="text-sm font-black uppercase tracking-widest text-indigo-200 mb-4">Made for all types of traders</p>
-        <h2 className="text-4xl font-black md:text-5xl">Who ZYLO is for.</h2>
+        <h2 className="text-4xl font-black md:text-5xl">Who BRIOO is for.</h2>
         <p className="mt-4 text-lg text-indigo-100 max-w-2xl mx-auto">
-          Whether you sell one product or manage a full product list, ZYLO helps you stay organised.
+          Whether you sell one product or manage a full product list, BRIOO helps you stay organised.
         </p>
       </motion.div>
       <div className="flex flex-wrap justify-center gap-3">
@@ -242,13 +242,13 @@ const WhyDifferent = () => (
   <section className="py-20 lg:py-28 bg-white">
     <div className="mx-auto max-w-7xl px-6 lg:px-8">
       <motion.div {...fade} className="max-w-3xl mb-14">
-        <p className="text-sm font-black uppercase tracking-widest text-indigo-600 mb-4">Why ZYLO Is Different</p>
+        <p className="text-sm font-black uppercase tracking-widest text-indigo-600 mb-4">Why BRIOO Is Different</p>
         <h2 className="text-4xl font-black text-slate-900 md:text-5xl leading-tight">
           Built for everyday traders first.
         </h2>
         <p className="mt-6 text-lg text-slate-600 leading-relaxed">
           Many POS systems are built for formal shops, restaurants, or large businesses.
-          ZYLO is different. We are building for the trader who uses a phone, sells daily,
+          BRIOO is different. We are building for the trader who uses a phone, sells daily,
           works with cash, has limited time, and needs a system that is simple enough to use immediately.
         </p>
       </motion.div>
@@ -280,10 +280,10 @@ const PilotCTA = () => (
       <div className="absolute inset-0 opacity-[0.07] pointer-events-none" style={{ backgroundImage: "radial-gradient(circle at 2px 2px, white 1px, transparent 0)", backgroundSize: "32px 32px" }} />
       <div className="relative z-10">
         <h2 className="text-3xl font-black md:text-5xl mb-6 leading-tight">
-          Join the ZYLO Trader Pilot.
+          Join the BRIOO Trader Pilot.
         </h2>
         <p className="text-lg text-indigo-100 max-w-2xl mx-auto mb-10">
-          We are currently looking for early traders to test ZYLO and help shape the
+          We are currently looking for early traders to test BRIOO and help shape the
           future of the platform. Test it for free, record real sales, and share your feedback.
         </p>
         <Link
@@ -304,7 +304,7 @@ const PricingPreview = () => (
       <motion.div {...fade} className="text-center mb-14">
         <p className="text-sm font-black uppercase tracking-widest text-indigo-600 mb-4">Pricing</p>
         <h2 className="text-4xl font-black text-slate-900 md:text-5xl">Simple pricing for real businesses.</h2>
-        <p className="mt-4 text-lg text-slate-600">ZYLO is being designed to stay affordable for small and growing traders.</p>
+        <p className="mt-4 text-lg text-slate-600">BRIOO is being designed to stay affordable for small and growing traders.</p>
       </motion.div>
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {[
@@ -396,7 +396,7 @@ const Benefits = () => (
     <div className="mx-auto max-w-7xl px-6 lg:px-8">
       <motion.div {...fade} className="text-center mb-16">
         <p className="text-sm font-black uppercase tracking-widest text-indigo-600 mb-4">Benefits</p>
-        <h2 className="text-4xl font-black text-slate-900 md:text-5xl">Why traders use ZYLO.</h2>
+        <h2 className="text-4xl font-black text-slate-900 md:text-5xl">Why traders use BRIOO.</h2>
       </motion.div>
       <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {benefits.map((b, i) => (

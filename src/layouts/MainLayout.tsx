@@ -26,6 +26,7 @@ const Header = () => {
 
   // Close mobile menu on route change
   React.useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsOpen(false);
   }, [location.pathname]);
 
@@ -41,7 +42,7 @@ const Header = () => {
         <Link to="/" className="group">
           <img
             src="/Logo_Horizontal.svg"
-            alt="ZYLO"
+            alt="BRIOO"
             className="h-9 w-auto transition-transform duration-200 group-hover:scale-105"
           />
         </Link>
@@ -127,7 +128,7 @@ const Footer = () => {
             <div className="mb-5">
               <img
                 src="/Logo_Horizontal.svg"
-                alt="ZYLO"
+                alt="BRIOO"
                 className="h-8 w-auto"
               />
             </div>
@@ -212,20 +213,20 @@ const Footer = () => {
             </h4>
             <ul className="space-y-3 text-[0.9rem]">
               <li>
-                <a
-                  href="#"
+                <Link
+                  to="/privacy"
                   className="text-slate-600 hover:text-indigo-600 transition-colors"
                 >
                   Privacy Policy
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  to="/terms"
                   className="text-slate-600 hover:text-indigo-600 transition-colors"
                 >
                   Terms of Service
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -249,7 +250,7 @@ const Footer = () => {
         </div>
 
         <div className="mt-16 pt-8 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-400">
-          <p>© 2026 ZYLO. All rights reserved.</p>
+          <p>© 2026 BRIOO. All rights reserved.</p>
           <div className="flex items-center gap-6">
             <span>Built in South Africa 🇿🇦</span>
             <span className="flex items-center gap-1.5 font-medium text-indigo-500">
