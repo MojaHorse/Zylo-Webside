@@ -61,9 +61,15 @@ const Hero = () => (
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
           animate={{ y: [0, -12, 0] }}
-          transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
+          transition={{ 
+            duration: 0.8,
+            y: {
+              repeat: Infinity,
+              duration: 5,
+              ease: "easeInOut"
+            }
+          }}
           className="relative justify-center lg:justify-end hidden lg:flex"
         >
           <div className="relative w-full max-w-[480px] drop-shadow-[0_25px_50px_rgba(79,70,229,0.18)]">
