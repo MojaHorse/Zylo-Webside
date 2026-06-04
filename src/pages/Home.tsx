@@ -6,6 +6,7 @@ import {
   Zap, DollarSign, Wifi, Heart, TrendingUp, CheckCircle2,
   AlertTriangle, Star
 } from "lucide-react";
+import iPhoneMockup from "../assets/iPhone.svg";
 
 const fade = {
   initial: { opacity: 0, y: 24 },
@@ -20,40 +21,60 @@ const Hero = () => (
     <div className="absolute -top-40 -right-40 h-[600px] w-[600px] rounded-full bg-indigo-100/40 blur-3xl pointer-events-none" />
     <div className="absolute -bottom-60 -left-40 h-[500px] w-[500px] rounded-full bg-violet-100/30 blur-3xl pointer-events-none" />
 
-    <div className="relative mx-auto max-w-7xl px-6 lg:px-8 text-center">
-      <motion.div {...fade}>
-        <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-indigo-100 bg-white px-5 py-2 text-sm font-bold text-indigo-600 shadow-sm">
-          <Smartphone size={15} /> Phone-first POS platform
-        </p>
+    <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+      <div className="grid gap-12 lg:grid-cols-2 items-center text-left">
+        <motion.div {...fade}>
+          <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-indigo-100 bg-white px-5 py-2 text-sm font-bold text-indigo-600 shadow-sm">
+            <Smartphone size={15} /> Phone-first POS platform
+          </p>
 
-        <h1 className="mx-auto max-w-4xl text-5xl font-black leading-[1.08] tracking-tight text-slate-900 md:text-7xl lg:text-8xl">
-          From street trade{" "}
-          <span className="bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent">
-            to smart trade.
-          </span>
-        </h1>
+          <h1 className="text-5xl font-black leading-[1.08] tracking-tight text-slate-900 md:text-7xl lg:text-8xl">
+            From street trade{" "}
+            <span className="bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent">
+              to smart trade.
+            </span>
+          </h1>
 
-        <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-slate-600 md:text-xl">
-          BRIOO is a simple POS platform for everyday traders and small businesses.
-          Sell faster, track your stock, record daily income, manage your business,
-          and build a reliable trading history — all from your phone.
-        </p>
+          <p className="mt-8 text-lg leading-relaxed text-slate-600 md:text-xl">
+            BRIOO is a simple POS platform for everyday traders and small businesses.
+            Sell faster, track your stock, record daily income, manage your business,
+            and build a reliable trading history — all from your phone.
+          </p>
 
-        <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <Link
-            to="/pilot"
-            className="group inline-flex items-center gap-2 rounded-2xl bg-indigo-600 px-8 py-4 text-lg font-bold text-white shadow-xl shadow-indigo-200/60 transition-all hover:bg-indigo-700 hover:scale-[1.02] active:scale-95"
-          >
-            Join the Trader Pilot <ArrowRight size={20} className="transition-transform group-hover:translate-x-1" />
-          </Link>
-          <Link
-            to="/features"
-            className="inline-flex items-center gap-2 rounded-2xl border-2 border-slate-200 bg-white px-8 py-4 text-lg font-bold text-slate-900 transition-all hover:border-indigo-300 hover:text-indigo-600"
-          >
-            See How It Works
-          </Link>
-        </div>
-      </motion.div>
+          <div className="mt-10 flex flex-col sm:flex-row gap-4">
+            <Link
+              to="/pilot"
+              className="group inline-flex items-center justify-center gap-2 rounded-2xl bg-indigo-600 px-8 py-4 text-lg font-bold text-white shadow-xl shadow-indigo-200/60 transition-all hover:bg-indigo-700 hover:scale-[1.02] active:scale-95"
+            >
+              Join the Trader Pilot <ArrowRight size={20} className="transition-transform group-hover:translate-x-1" />
+            </Link>
+            <Link
+              to="/features"
+              className="inline-flex items-center justify-center gap-2 rounded-2xl border-2 border-slate-200 bg-white px-8 py-4 text-lg font-bold text-slate-900 transition-all hover:border-indigo-300 hover:text-indigo-600"
+            >
+              See How It Works
+            </Link>
+          </div>
+        </motion.div>
+
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          animate={{ y: [0, -12, 0] }}
+          transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
+          className="relative justify-center lg:justify-end hidden lg:flex"
+        >
+          <div className="relative w-full max-w-[480px] drop-shadow-[0_25px_50px_rgba(79,70,229,0.18)]">
+            <img 
+              src={iPhoneMockup} 
+              alt="BRIOO POS App Mockup" 
+              className="w-full h-auto"
+            />
+          </div>
+        </motion.div>
+      </div>
     </div>
   </section>
 );
