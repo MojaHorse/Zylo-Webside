@@ -3,8 +3,6 @@ import { motion } from "framer-motion";
 import { 
   Smartphone, 
   Tablet, 
-  Apple, 
-  PlayCircle, 
   ArrowRight, 
   Download as DownloadIcon, 
   Clock, 
@@ -107,6 +105,15 @@ const Download = () => {
               From phone to tablet, we're building the most accessible POS for everyday traders. 
               Be the first to know when we launch on your favorite platform.
             </p>
+
+            <div className="mt-10 flex flex-wrap justify-center gap-4">
+              <a href="#waitlist" className="transition-transform hover:scale-105 active:scale-95">
+                <img src="/app-store-badge.svg" alt="Download on the App Store" className="h-14 w-auto animate-fade-in" />
+              </a>
+              <a href="#waitlist" className="transition-transform hover:scale-105 active:scale-95">
+                <img src="/google-play-badge.svg" alt="Get it on Google Play" className="h-14 w-auto animate-fade-in" />
+              </a>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -144,7 +151,7 @@ const Download = () => {
       </section>
 
       {/* Waitlist Section */}
-      <section className="py-20 lg:py-32 bg-slate-50 relative overflow-hidden">
+      <section id="waitlist" className="py-20 lg:py-32 bg-slate-50 relative overflow-hidden">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="relative z-10 mx-auto max-w-3xl rounded-[3rem] bg-indigo-600 p-10 md:p-20 text-center text-white shadow-2xl shadow-indigo-200">
             <div className="absolute inset-0 opacity-[0.07] pointer-events-none" style={{ backgroundImage: "radial-gradient(circle at 2px 2px, white 1px, transparent 0)", backgroundSize: "32px 32px" }} />
@@ -203,31 +210,6 @@ const Download = () => {
         </div>
       </section>
 
-      {/* App Store Placeholders */}
-      <section className="py-20 lg:py-28 bg-white">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
-          <motion.div {...fade}>
-            <h2 className="text-3xl font-black text-slate-900 mb-12">Coming to official stores</h2>
-            <div className="flex flex-wrap justify-center gap-6 opacity-40 grayscale pointer-events-none">
-              <div className="flex items-center gap-3 rounded-2xl border-2 border-slate-200 px-8 py-4">
-                <Apple size={32} className="text-slate-900" />
-                <div className="text-left">
-                  <p className="text-[10px] font-bold uppercase tracking-wider text-slate-500">Download on the</p>
-                  <p className="text-xl font-black text-slate-900 leading-none">App Store</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-3 rounded-2xl border-2 border-slate-200 px-8 py-4">
-                <PlayCircle size={32} className="text-slate-900" />
-                <div className="text-left">
-                  <p className="text-[10px] font-bold uppercase tracking-wider text-slate-500">Get it on</p>
-                  <p className="text-xl font-black text-slate-900 leading-none">Google Play</p>
-                </div>
-              </div>
-            </div>
-            <p className="mt-8 text-slate-500 font-medium italic">Apps are currently in private beta testing.</p>
-          </motion.div>
-        </div>
-      </section>
 
       {/* Why Use the App? */}
       <section className="py-20 lg:py-28 bg-slate-50">
