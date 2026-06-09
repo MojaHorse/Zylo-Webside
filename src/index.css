@@ -1,20 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;300;400;500;600;700;800;900&display=swap');
 @import "tailwindcss";
 
+/* ─── DESIGN TOKENS ─── */
 :root {
-  --brioo-primary: #3949AB;
-  --brioo-primary-dark: #27338F;
-  --brioo-primary-soft: #EEF1FF;
+  --brioo-primary: #4f46e5;
+  --brioo-primary-dark: #3730a3;
+  --brioo-primary-soft: #eef2ff;
+  --brioo-accent: #6366f1;
 
-  --brioo-ink: #0F172A;
-  --brioo-muted: #64748B;
-  --brioo-bg: #FFFFFF;
-  --brioo-surface: #FFFFFF;
+  --brioo-ink: #0f172a;
+  --brioo-ink-secondary: #1e293b;
+  --brioo-muted: #64748b;
+  --brioo-subtle: #94a3b8;
+  --brioo-bg: #ffffff;
+  --brioo-surface: #f8fafc;
+  --brioo-border: #e2e8f0;
 
-  --brioo-success: #10B981;
-  --brioo-warning: #F59E0B;
+  --brioo-success: #10b981;
+  --brioo-warning: #f59e0b;
 }
 
+/* ─── BASE ─── */
 html {
   scroll-behavior: smooth;
 }
@@ -26,22 +32,80 @@ body {
   color: var(--brioo-ink);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.025em;
 }
 
+/* ─── GLASS ─── */
 .glass {
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(241, 245, 249, 0.6);
 }
 
+/* ─── GRID BACKGROUNDS ─── */
+.bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(99, 102, 241, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(99, 102, 241, 0.04) 1px, transparent 1px);
+}
+
+.bg-dot-pattern {
+  background-size: 24px 24px;
+  background-image: radial-gradient(rgba(99, 102, 241, 0.07) 1px, transparent 1px);
+}
+
+/* ─── TEXT GRADIENT ─── */
 .text-gradient {
-  background: linear-gradient(to right, #4f46e5, #7c3aed);
+  background: linear-gradient(135deg, #3b82f6 0%, #4f46e5 50%, #8b5cf6 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* ─── CUSTOM SCROLLBAR ─── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(99, 102, 241, 0.25);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(99, 102, 241, 0.4);
+}
+
+/* ─── INFINITE MARQUEE ANIMATION ─── */
+@keyframes marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 35s linear infinite;
+}
+
+.animate-marquee-reverse {
+  display: flex;
+  width: max-content;
+  animation: marquee 35s linear infinite reverse;
+}
+
+.pause-on-hover:hover .animate-marquee,
+.pause-on-hover:hover .animate-marquee-reverse {
+  animation-play-state: paused;
 }

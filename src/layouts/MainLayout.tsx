@@ -264,10 +264,13 @@ const Footer = () => {
 };
 
 const MainLayout = ({ children }: { children: React.ReactNode }) => {
+  const location = useLocation();
+  const isHome = location.pathname === "/";
+
   return (
     <div className="min-h-screen bg-white selection:bg-indigo-100 selection:text-indigo-900">
       <Header />
-      <main className="pt-[72px]">{children}</main>
+      <main className={isHome ? "" : "pt-[72px]"}>{children}</main>
       <Footer />
     </div>
   );
