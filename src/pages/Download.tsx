@@ -11,7 +11,8 @@ import {
   Zap,
   Loader2
 } from "lucide-react";
-import { db } from "../firebase";
+import { db, analytics } from "../firebase";
+import { logEvent } from "firebase/analytics";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 
 const fade = {
@@ -71,6 +72,7 @@ const Download = () => {
         source: "download_page",
         platform: navigator.userAgent
       });
+      logEvent(analytics, 'download_waitlist', { platform: navigator.userAgent });
       setSubmitted(true);
       setEmail("");
     } catch (err) {

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { CheckCircle2, ArrowRight, Loader2 } from "lucide-react";
-import { db } from "../firebase";
+import { db, analytics } from "../firebase";
+import { logEvent } from "firebase/analytics";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import React from "react";
 import { usePlacesWidget } from "react-google-autocomplete";
@@ -53,6 +54,7 @@ const Pilot = () => {
         ...formData,
         timestamp: serverTimestamp(),
       });
+      logEvent(analytics, 'join_pilot', { method: formData.contact.includes("@") ? "email" : "whatsapp" });
       setSubmitted(true);
     } catch (err) {
       console.error("Error submitting pilot application:", err);

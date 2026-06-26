@@ -2,22 +2,33 @@ rules_version = '2';
 
 service cloud.firestore {
   match /databases/{database}/documents {
-    // Waitlist collection: allow anyone to join, but nobody to read/list
+    // Helper function to check if user is the administrator
+    function isAdmin() {
+      return request.auth != null && (request.auth.token.email == 'admin@zyloapp.com' || request.auth.token.email == 'admin@brioo.co.za');
+    }
+
+    // Waitlist collection: allow anyone to join, only admin to read/write
     match /waitlist/{entry} {
       allow create: if true;
-      allow read, update, delete: if false;
+      allow read, write: if isAdmin();
     }
 
-    // Pilot applications collection: allow anyone to apply, but nobody to read/list
+    // Pilot applications collection: allow anyone to apply, only admin to read/write
     match /pilot_applications/{application} {
       allow create: if true;
-      allow read, update, delete: if false;
+      allow read, write: if isAdmin();
     }
 
-    // Feedback collection: allow anyone to submit feedback, but restrict reading/listing
+    // Feedback collection: allow anyone to submit feedback, only admin to read/write
     match /feedback/{doc} {
       allow create: if true;
-      allow read, update, delete: if false;
+      allow read, write: if isAdmin();
+    }
+
+    // Messages collection: allow anyone to send messages, only admin to read/write
+    match /messages/{message} {
+      allow create: if true;
+      allow read, write: if isAdmin();
     }
 
     // Default deny for everything else

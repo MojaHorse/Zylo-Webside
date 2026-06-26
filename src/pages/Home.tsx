@@ -9,7 +9,8 @@ import {
   Send, AlertCircle, Loader2, X, Lock, Grid
 } from "lucide-react";
 import { collection, addDoc } from "firebase/firestore";
-import { db } from "../firebase";
+import { db, analytics } from "../firebase";
+import { logEvent } from "firebase/analytics";
 import iPhoneMockup from "../assets/iPhone.svg";
 
 /* ─── ANIMATION PRESETS ─── */
@@ -1015,7 +1016,7 @@ const HowItWorks = () => (
 const plans = [
   {
     name: "Solo",
-    price: "R74.99",
+    price: "R79.99",
     period: "/mo",
     desc: "Best for sole-traders starting records.",
     features: [
@@ -1313,6 +1314,7 @@ const FeedbackForm = () => {
         submittedAt: new Date(),
         status: "pending_verification"
       });
+      logEvent(analytics, 'home_feedback_submission');
       setStatus("success");
       setName("");
       setBusinessNameOrId("");

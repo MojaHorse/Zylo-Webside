@@ -12,7 +12,7 @@ const fade = {
 const plans = [
   {
     name: "Solo",
-    price: "R74.99",
+    price: "R79.99",
     period: "/month",
     desc: "Your first real business system.",
     items: ["Mobile only", "1 staff member", "Up to 25 products", "Auto stock tracking", "30 days sales history"],
