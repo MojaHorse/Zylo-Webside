@@ -31,6 +31,12 @@ service cloud.firestore {
       allow read, write: if isAdmin();
     }
 
+    // Error Logs collection: allow anyone to create, only admin to read/write
+    match /system_error_logs/{logId} {
+      allow create: if true;
+      allow read, write: if isAdmin();
+    }
+
     // Default deny for everything else
     match /{document=**} {
       allow read, write: if false;
