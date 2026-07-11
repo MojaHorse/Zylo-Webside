@@ -28,182 +28,173 @@ const fadeIn = {
    ═══════════════════════════════════════════════════════════════ */
 const Hero = () => {
   return (
-    <section className="relative overflow-hidden bg-[#f8f9fb] pt-28 sm:pt-32 pb-0">
-      {/* Soft radial glows */}
-      <div className="absolute top-[-100px] left-1/2 -translate-x-1/2 w-[800px] h-[500px] rounded-full bg-indigo-100/30 blur-[140px] pointer-events-none" />
+    <section className="relative overflow-hidden bg-[#fafafa] bg-grid-pattern min-h-screen flex flex-col justify-center pt-24 pb-20 border-b border-slate-100">
+      {/* Ambient light overlays */}
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-indigo-100/30 blur-[130px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[600px] h-[500px] rounded-full bg-amber-50/40 blur-[130px] pointer-events-none" />
 
-      {/* ── Text Block ── */}
-      <div className="relative z-10 mx-auto max-w-4xl px-6 lg:px-8 text-center">
-        {/* Positioning badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, ease }}
-          className="inline-flex items-center gap-2 rounded-full border border-slate-200/80 bg-white px-4 py-1.5 text-xs font-bold text-slate-600 shadow-xs mb-7"
-        >
-          <span className="text-base leading-none">🇿🇦</span>
-          <span>Built for South African Traders</span>
-        </motion.div>
+      {/* Faint brand watermark */}
+      <img
+        src="/BRIOO ASSETS/logo_mark_light.svg"
+        className="absolute top-[10%] right-[-8%] w-[550px] sm:w-[750px] h-auto opacity-[0.03] select-none pointer-events-none rotate-[15deg] z-0"
+        alt=""
+      />
 
-        <motion.h1
-          initial={{ opacity: 0, y: 25 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease }}
-          className="text-4xl font-extrabold leading-[1.1] tracking-tight text-slate-900 sm:text-5xl md:text-6xl lg:text-[4.25rem]"
-        >
-          Run Your Hustle
-          <br />
-          <span className="text-gradient">Like a Business</span>
-        </motion.h1>
+      <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="grid gap-12 lg:grid-cols-12 items-center">
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1, ease }}
-          className="mt-6 text-base leading-relaxed text-slate-500 sm:text-lg max-w-xl mx-auto font-medium"
-        >
-          Whether you run a spaza shop, food stall, or salon — BRIOO turns your phone into a full point-of-sale. Record every sale, track your stock, and cash up at the end of the day. No internet needed.
-        </motion.p>
+          {/* Copy — Left Column */}
+          <div className="lg:col-span-6 text-center lg:text-left z-10">
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, ease }}
+              className="inline-flex items-center gap-2 rounded-full border border-slate-200/80 bg-white px-4 py-1.5 text-xs font-bold text-slate-600 shadow-xs mb-6"
+            >
+              <span className="text-base leading-none">🇿🇦</span>
+              <span>Built for South African Traders</span>
+            </motion.div>
 
-        {/* CTAs */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2, ease }}
-          className="mt-9 flex flex-col sm:flex-row items-center justify-center gap-4"
-        >
-          <Link
-            to="/pilot"
-            className="group inline-flex items-center justify-center gap-2 rounded-full bg-indigo-600 px-8 py-3.5 text-sm font-bold text-white shadow-lg shadow-indigo-200/50 hover:bg-indigo-700 hover:shadow-indigo-300/60 transition-all duration-300 active:scale-[0.97]"
-          >
-            Join the Trader Pilot
-            <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-0.5" />
-          </Link>
-          <Link
-            to="/features"
-            className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-8 py-3.5 text-sm font-bold text-slate-700 shadow-xs hover:border-indigo-300 hover:text-indigo-600 transition-all duration-200"
-          >
-            See How It Works
-          </Link>
-        </motion.div>
-      </div>
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.05, ease }}
+              className="text-4xl font-extrabold leading-[1.08] tracking-tight text-slate-900 sm:text-5xl md:text-6xl lg:text-7xl"
+            >
+              Run your hustle
+              <br />
+              <span className="text-gradient">like a business.</span>
+            </motion.h1>
 
-      {/* ── Dark Showcase Panel ── */}
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.25, ease }}
-        className="relative z-10 mx-auto max-w-5xl px-6 lg:px-8 mt-16 sm:mt-20"
-      >
-        <div className="relative rounded-t-3xl bg-gradient-to-b from-slate-900 to-slate-800 px-6 pt-10 sm:pt-14 pb-0 overflow-hidden border border-slate-700/50 border-b-0">
-          {/* Subtle grid texture on dark panel */}
-          <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[length:20px_20px] pointer-events-none" />
-          
-          {/* Ambient glow inside panel */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] rounded-full bg-indigo-500/10 blur-[100px] pointer-events-none" />
+            <motion.p
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1, ease }}
+              className="mt-6 text-base leading-relaxed text-slate-500 sm:text-lg max-w-xl mx-auto lg:mx-0 font-medium"
+            >
+              Whether you run a spaza shop, food stall, or salon — BRIOO turns your phone into a full point-of-sale. Record every sale, track your stock, and cash up at the end of the day. No internet needed.
+            </motion.p>
 
-          {/* Feature pills row */}
-          <div className="relative z-10 flex flex-wrap items-center justify-center gap-3 mb-10 sm:mb-14">
-            {[
-              { label: "100% Offline", icon: "📡" },
-              { label: "Instant Cashups", icon: "💰" },
-              { label: "Stock Tracking", icon: "📦" },
-              { label: "WhatsApp Receipts", icon: "💬" },
-            ].map((item) => (
-              <div
-                key={item.label}
-                className="inline-flex items-center gap-1.5 rounded-full bg-white/[0.07] border border-white/[0.08] px-3.5 py-1.5 text-[11px] font-semibold text-slate-300 backdrop-blur-sm"
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.15, ease }}
+              className="mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+            >
+              <Link
+                to="/pilot"
+                className="group inline-flex items-center justify-center gap-2 rounded-xl bg-indigo-600 px-8 py-4 text-sm font-bold text-white shadow-lg shadow-indigo-200/60 hover:bg-indigo-700 transition-all duration-300 active:scale-[0.98]"
               >
-                <span className="text-sm">{item.icon}</span>
-                {item.label}
-              </div>
-            ))}
+                Join the Trader Pilot
+                <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+              </Link>
+              <Link
+                to="/features"
+                className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-8 py-4 text-sm font-bold text-slate-700 shadow-xs hover:border-indigo-300 hover:text-indigo-600 transition-all duration-200"
+              >
+                See How It Works
+              </Link>
+            </motion.div>
+
+            {/* Trust strip */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.3, ease }}
+              className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-2 justify-center lg:justify-start text-[11px] font-semibold text-slate-400 uppercase tracking-wider"
+            >
+              <span className="flex items-center gap-1.5"><Wifi size={12} className="text-emerald-500" /> Works Offline</span>
+              <span className="flex items-center gap-1.5"><CheckCircle2 size={12} className="text-indigo-500" /> Free to Start</span>
+              <span className="flex items-center gap-1.5"><Lock size={12} className="text-slate-400" /> Your Data, Your Phone</span>
+            </motion.div>
           </div>
 
-          {/* Phone + Floating Cards Composition */}
-          <div className="relative flex justify-center">
-            {/* Phone Mockup */}
-            <div className="relative z-20 w-[240px] sm:w-[280px] lg:w-[300px]">
-              <img
+          {/* Phone + Cards — Right Column */}
+          <div className="lg:col-span-6 relative flex justify-center mt-8 lg:mt-0 z-10">
+            {/* Ambient glow behind phone */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full bg-indigo-50/80 blur-[90px] pointer-events-none" />
+
+            <div className="relative z-10 w-[280px] sm:w-[330px] lg:w-[370px] xl:w-[390px]">
+              <motion.img
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.7, ease }}
                 src={iPhoneMockup}
                 alt="BRIOO Mobile App"
-                className="w-full h-auto drop-shadow-[0_-10px_50px_rgba(99,102,241,0.15)]"
+                className="w-full h-auto drop-shadow-[0_25px_50px_rgba(15,23,42,0.08)]"
               />
+
+              {/* Card: Daily Revenue */}
+              <motion.div
+                initial={{ opacity: 0, x: -30, y: -20 }}
+                animate={{ opacity: 1, x: 0, y: 0 }}
+                transition={{ delay: 0.3, duration: 0.6, ease }}
+                className="absolute -left-16 top-16 w-[180px] rounded-xl border border-slate-100 bg-white p-4 shadow-lg shadow-slate-200/40 pointer-events-none"
+              >
+                <div className="flex items-center gap-2 mb-1.5">
+                  <div className="flex h-6 w-6 items-center justify-center rounded-md bg-emerald-50 text-emerald-600">
+                    <TrendingUp size={12} />
+                  </div>
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Daily Revenue</span>
+                </div>
+                <div className="text-xl font-extrabold text-slate-900">R2,450.00</div>
+                <div className="text-[9px] text-emerald-600 font-bold flex items-center gap-0.5">
+                  <span>+18.4%</span> <span className="text-slate-400 font-normal">from yesterday</span>
+                </div>
+              </motion.div>
+
+              {/* Card: Stock Alert */}
+              <motion.div
+                initial={{ opacity: 0, x: 30, y: 120 }}
+                animate={{ opacity: 1, x: 0, y: 0 }}
+                transition={{ delay: 0.4, duration: 0.6, ease }}
+                className="absolute -right-20 bottom-32 w-[180px] rounded-xl border border-red-50 bg-white p-4 shadow-lg shadow-slate-200/40 pointer-events-none"
+              >
+                <div className="flex items-center gap-2 mb-1.5">
+                  <div className="flex h-6 w-6 items-center justify-center rounded-md bg-red-50 text-red-500">
+                    <Package size={12} />
+                  </div>
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-red-500">Stock Alert</span>
+                </div>
+                <div className="text-[13px] font-bold text-slate-800">Brown Bread</div>
+                <div className="text-[10px] text-slate-400 font-medium mt-0.5">Only 3 loaves remaining</div>
+              </motion.div>
+
+              {/* Card: Last Sale */}
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5, duration: 0.6, ease }}
+                className="absolute -left-10 bottom-6 w-[200px] rounded-xl border border-slate-100 bg-white p-4 shadow-lg shadow-slate-200/40 pointer-events-none"
+              >
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <div className="flex h-5 w-5 items-center justify-center rounded-full bg-indigo-50 text-indigo-600">
+                      <ShoppingCart size={10} />
+                    </div>
+                    <span className="text-[10px] font-bold text-slate-800">Sale Recorded</span>
+                  </div>
+                  <span className="text-[8px] font-medium text-slate-400">Just now</span>
+                </div>
+                <div className="mt-2 flex justify-between items-baseline">
+                  <span className="text-[12px] text-slate-500">1x Kota + Chips</span>
+                  <span className="text-sm font-extrabold text-slate-900">R45.00</span>
+                </div>
+              </motion.div>
             </div>
-
-            {/* Card: Daily Revenue — Left */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.5, duration: 0.6, ease }}
-              className="absolute left-0 sm:left-[2%] lg:left-[8%] top-[8%] sm:top-[12%] w-[150px] sm:w-[175px] rounded-xl border border-slate-100 bg-white p-3.5 shadow-lg shadow-slate-900/10 pointer-events-none z-30"
-            >
-              <div className="flex items-center gap-2 mb-1.5">
-                <div className="flex h-6 w-6 items-center justify-center rounded-lg bg-emerald-50 text-emerald-600">
-                  <TrendingUp size={12} />
-                </div>
-                <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Revenue</span>
-              </div>
-              <div className="text-lg font-extrabold text-slate-900">R2,450</div>
-              <div className="text-[9px] text-emerald-600 font-bold mt-0.5">+18.4% <span className="text-slate-400 font-normal">vs yesterday</span></div>
-            </motion.div>
-
-            {/* Card: Offline Status — Right */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.6, duration: 0.6, ease }}
-              className="absolute right-0 sm:right-[2%] lg:right-[8%] top-[8%] sm:top-[12%] w-[150px] sm:w-[175px] rounded-xl border border-emerald-100 bg-white p-3.5 shadow-lg shadow-slate-900/10 pointer-events-none z-30"
-            >
-              <div className="flex items-center gap-2 mb-1.5">
-                <div className="flex h-6 w-6 items-center justify-center rounded-lg bg-indigo-50 text-indigo-600">
-                  <Wifi size={12} />
-                </div>
-                <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Status</span>
-              </div>
-              <div className="flex items-center gap-2 mt-1">
-                <div className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-                <span className="text-xs font-bold text-emerald-600">Offline Ready</span>
-              </div>
-            </motion.div>
-
-            {/* Card: Last Sale — Bottom Left */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.7, duration: 0.6, ease }}
-              className="absolute left-0 sm:left-[3%] lg:left-[10%] bottom-[18%] sm:bottom-[20%] w-[150px] sm:w-[180px] rounded-xl border border-slate-100 bg-white p-3.5 shadow-lg shadow-slate-900/10 pointer-events-none z-30"
-            >
-              <div className="flex items-center gap-2 mb-1.5">
-                <div className="flex h-6 w-6 items-center justify-center rounded-lg bg-indigo-50 text-indigo-600">
-                  <ShoppingCart size={12} />
-                </div>
-                <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Last Sale</span>
-              </div>
-              <div className="flex justify-between items-baseline">
-                <span className="text-xs text-slate-500">1× Kota + Chips</span>
-                <span className="text-sm font-extrabold text-slate-900">R45</span>
-              </div>
-            </motion.div>
-
-            {/* Card: Stock Alert — Bottom Right */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.8, duration: 0.6, ease }}
-              className="absolute right-0 sm:right-[3%] lg:right-[10%] bottom-[18%] sm:bottom-[20%] w-[150px] sm:w-[175px] rounded-xl border border-amber-100 bg-white p-3.5 shadow-lg shadow-slate-900/10 pointer-events-none z-30"
-            >
-              <div className="flex items-center gap-2 mb-1.5">
-                <div className="flex h-6 w-6 items-center justify-center rounded-lg bg-amber-50 text-amber-600">
-                  <Package size={12} />
-                </div>
-                <span className="text-[10px] font-bold uppercase tracking-wider text-amber-600">Stock Alert</span>
-              </div>
-              <div className="text-xs font-bold text-slate-800">Brown Bread</div>
-              <div className="text-[10px] text-slate-400 font-medium mt-0.5">Only 3 remaining</div>
-            </motion.div>
           </div>
         </div>
+      </div>
+
+      {/* Scroll indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1, y: [0, 10, 0] }}
+        transition={{ delay: 1, duration: 2, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-slate-400 pointer-events-none"
+      >
+        <span className="text-[10px] font-bold uppercase tracking-widest">Scroll</span>
+        <ChevronDown size={16} />
       </motion.div>
     </section>
   );
