@@ -118,7 +118,7 @@ const Hero = () => {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.7, ease }}
-                src="/hero-mockup.svg"
+                src="/hero-mockup.png"
                 alt="BRIOO Mobile App"
                 className="w-full h-auto drop-shadow-[0_25px_50px_rgba(15,23,42,0.12)]"
               />
