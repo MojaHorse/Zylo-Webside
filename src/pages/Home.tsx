@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   ArrowRight, ShoppingCart, Package, BarChart3, CheckCircle2,
-  Calculator, Zap, Wifi, ChevronRight, Store, Plus,
+  Calculator, Zap, Wifi, ChevronRight, ChevronDown, Store, Plus,
   Sparkles, TrendingUp, WifiOff, MessageSquare,
   BatteryCharging, Shield, Star, Send, AlertCircle,
   Loader2, X, Lock, Grid
