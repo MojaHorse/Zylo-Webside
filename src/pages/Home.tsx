@@ -11,7 +11,6 @@ import {
 import { collection, addDoc } from "firebase/firestore";
 import { db, analytics } from "../firebase";
 import { logEvent } from "firebase/analytics";
-import iPhoneMockup from "../assets/iPhone.svg";
 
 /* ─── ANIMATION PRESETS ─── */
 const ease = [0.25, 0.1, 0.25, 1] as [number, number, number, number];
@@ -109,78 +108,20 @@ const Hero = () => {
             </motion.div>
           </div>
 
-          {/* Phone + Cards — Right Column */}
+          {/* Phone Mockup — Right Column */}
           <div className="lg:col-span-6 relative flex justify-center mt-8 lg:mt-0 z-10">
             {/* Ambient glow behind phone */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full bg-indigo-50/80 blur-[90px] pointer-events-none" />
 
-            <div className="relative z-10 w-[280px] sm:w-[330px] lg:w-[370px] xl:w-[390px]">
+            <div className="relative z-10 w-[350px] sm:w-[450px] lg:w-[500px] xl:w-[600px] lg:-mr-12 xl:-mr-24 lg:mt-12">
               <motion.img
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.7, ease }}
-                src={iPhoneMockup}
+                src="/hero-mockup.svg"
                 alt="BRIOO Mobile App"
-                className="w-full h-auto drop-shadow-[0_25px_50px_rgba(15,23,42,0.08)]"
+                className="w-full h-auto drop-shadow-[0_25px_50px_rgba(15,23,42,0.12)]"
               />
-
-              {/* Card: Daily Revenue */}
-              <motion.div
-                initial={{ opacity: 0, x: -30, y: -20 }}
-                animate={{ opacity: 1, x: 0, y: 0 }}
-                transition={{ delay: 0.3, duration: 0.6, ease }}
-                className="absolute -left-16 top-16 w-[180px] rounded-xl border border-slate-100 bg-white p-4 shadow-lg shadow-slate-200/40 pointer-events-none"
-              >
-                <div className="flex items-center gap-2 mb-1.5">
-                  <div className="flex h-6 w-6 items-center justify-center rounded-md bg-emerald-50 text-emerald-600">
-                    <TrendingUp size={12} />
-                  </div>
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Daily Revenue</span>
-                </div>
-                <div className="text-xl font-extrabold text-slate-900">R2,450.00</div>
-                <div className="text-[9px] text-emerald-600 font-bold flex items-center gap-0.5">
-                  <span>+18.4%</span> <span className="text-slate-400 font-normal">from yesterday</span>
-                </div>
-              </motion.div>
-
-              {/* Card: Stock Alert */}
-              <motion.div
-                initial={{ opacity: 0, x: 30, y: 120 }}
-                animate={{ opacity: 1, x: 0, y: 0 }}
-                transition={{ delay: 0.4, duration: 0.6, ease }}
-                className="absolute -right-20 bottom-32 w-[180px] rounded-xl border border-red-50 bg-white p-4 shadow-lg shadow-slate-200/40 pointer-events-none"
-              >
-                <div className="flex items-center gap-2 mb-1.5">
-                  <div className="flex h-6 w-6 items-center justify-center rounded-md bg-red-50 text-red-500">
-                    <Package size={12} />
-                  </div>
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-red-500">Stock Alert</span>
-                </div>
-                <div className="text-[13px] font-bold text-slate-800">Brown Bread</div>
-                <div className="text-[10px] text-slate-400 font-medium mt-0.5">Only 3 loaves remaining</div>
-              </motion.div>
-
-              {/* Card: Last Sale */}
-              <motion.div
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5, duration: 0.6, ease }}
-                className="absolute -left-10 bottom-6 w-[200px] rounded-xl border border-slate-100 bg-white p-4 shadow-lg shadow-slate-200/40 pointer-events-none"
-              >
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <div className="flex h-5 w-5 items-center justify-center rounded-full bg-indigo-50 text-indigo-600">
-                      <ShoppingCart size={10} />
-                    </div>
-                    <span className="text-[10px] font-bold text-slate-800">Sale Recorded</span>
-                  </div>
-                  <span className="text-[8px] font-medium text-slate-400">Just now</span>
-                </div>
-                <div className="mt-2 flex justify-between items-baseline">
-                  <span className="text-[12px] text-slate-500">1x Kota + Chips</span>
-                  <span className="text-sm font-extrabold text-slate-900">R45.00</span>
-                </div>
-              </motion.div>
             </div>
           </div>
         </div>
