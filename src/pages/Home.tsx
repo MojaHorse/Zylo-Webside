@@ -51,8 +51,8 @@ const Hero = () => {
               transition={{ duration: 0.5, ease }}
               className="inline-flex items-center gap-2 rounded-full border border-slate-200/80 bg-white px-4 py-1.5 text-xs font-bold text-slate-600 shadow-xs mb-6"
             >
-              <span className="text-base leading-none">🇿🇦</span>
-              <span>Built for South African Traders</span>
+              <span className="text-base leading-none">🌍</span>
+              <span>Built for Africa</span>
             </motion.div>
 
             <motion.h1
@@ -209,7 +209,7 @@ const marqueeItems = [
   { text: "WhatsApp Receipts", icon: MessageSquare, color: "text-blue-600 bg-blue-50/70 border-blue-100/80" },
   { text: "End-of-day Cashups", icon: Calculator, color: "text-rose-600 bg-rose-50/70 border-rose-100/80" },
   { text: "Load-shedding Proof", icon: BatteryCharging, color: "text-orange-600 bg-orange-50/70 border-orange-100/80" },
-  { text: "Built in South Africa 🇿🇦", icon: Shield, color: "text-slate-700 bg-slate-50/80 border-slate-200/80" },
+  { text: "Built for Africa 🌍", icon: Shield, color: "text-slate-700 bg-slate-50/80 border-slate-200/80" },
   { text: "Automatic Stock Alerts", icon: Package, color: "text-red-600 bg-red-50/70 border-red-100/80" },
   { text: "Daily Revenue Reports", icon: TrendingUp, color: "text-teal-600 bg-teal-50/70 border-teal-100/80" },
 ];
