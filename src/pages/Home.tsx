@@ -28,66 +28,161 @@ const fadeIn = {
    ═══════════════════════════════════════════════════════════════ */
 const Hero = () => {
   return (
-    <section className="relative overflow-hidden bg-[#fafafa] min-h-screen flex items-center pt-20 pb-16 border-b border-slate-100">
-      {/* Subtle ambient glow */}
-      <div className="absolute top-[-200px] left-1/2 -translate-x-1/2 w-[900px] h-[600px] rounded-full bg-indigo-100/25 blur-[160px] pointer-events-none" />
+    <section className="relative overflow-hidden bg-[#f8f9fb] pt-32 pb-8 sm:pt-36 sm:pb-12">
+      {/* Soft radial glows */}
+      <div className="absolute top-[-120px] left-1/2 -translate-x-1/2 w-[800px] h-[500px] rounded-full bg-indigo-100/30 blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-0 right-[-200px] w-[400px] h-[400px] rounded-full bg-emerald-50/40 blur-[120px] pointer-events-none" />
 
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+      <div className="relative z-10 mx-auto max-w-4xl px-6 lg:px-8 text-center">
+        {/* Headline */}
+        <motion.h1
+          initial={{ opacity: 0, y: 25 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease }}
+          className="text-4xl font-extrabold leading-[1.1] tracking-tight text-slate-900 sm:text-5xl md:text-6xl lg:text-[4.25rem]"
+        >
+          Your Phone-First
+          <br />
+          <span className="text-gradient">Point of Sale</span>
+        </motion.h1>
 
-          {/* Copy — Left */}
-          <div className="text-center lg:text-left">
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, ease }}
-              className="text-5xl font-extrabold leading-[1.06] tracking-tight text-slate-900 sm:text-6xl md:text-7xl lg:text-[5.5rem]"
-            >
-              From street trade
-              <br />
-              <span className="text-gradient">to smart trade.</span>
-            </motion.h1>
+        {/* Subtitle */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1, ease }}
+          className="mt-6 text-base leading-relaxed text-slate-500 sm:text-lg max-w-xl mx-auto font-medium"
+        >
+          BRIOO helps everyday South African traders record sales, track stock and cash up — right from your phone, even offline.
+        </motion.p>
 
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.12, ease }}
-              className="mt-8 text-lg leading-relaxed text-slate-500 sm:text-xl max-w-lg mx-auto lg:mx-0 font-medium"
-            >
-              The simple, premium POS built for everyday South African traders — record sales, track stock, and cash up, right from your phone.
-            </motion.p>
+        {/* CTAs */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2, ease }}
+          className="mt-9 flex flex-col sm:flex-row items-center justify-center gap-4"
+        >
+          <Link
+            to="/pilot"
+            className="group inline-flex items-center justify-center gap-2 rounded-full bg-indigo-600 px-8 py-3.5 text-sm font-bold text-white shadow-lg shadow-indigo-200/50 hover:bg-indigo-700 hover:shadow-indigo-300/60 transition-all duration-300 active:scale-[0.97]"
+          >
+            Get started
+            <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-0.5" />
+          </Link>
+          <Link
+            to="/features"
+            className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-8 py-3.5 text-sm font-bold text-slate-700 shadow-xs hover:border-indigo-300 hover:text-indigo-600 transition-all duration-200"
+          >
+            View features
+          </Link>
+        </motion.div>
+      </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.22, ease }}
-              className="mt-10 flex justify-center lg:justify-start"
-            >
-              <Link
-                to="/pilot"
-                className="group inline-flex items-center justify-center gap-2.5 rounded-2xl bg-indigo-600 px-10 py-4.5 text-base font-bold text-white shadow-xl shadow-indigo-200/50 hover:bg-indigo-700 hover:shadow-indigo-300/60 transition-all duration-300 active:scale-[0.97]"
-              >
-                Join the Pilot
-                <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
-              </Link>
-            </motion.div>
-          </div>
+      {/* ── Product Illustration ── */}
+      <div className="relative z-10 mx-auto max-w-6xl px-6 lg:px-8 mt-16 sm:mt-20">
+        <div className="relative flex items-center justify-center min-h-[420px] sm:min-h-[500px]">
 
-          {/* Phone Mockup — Right */}
-          <div className="relative flex justify-center lg:justify-end">
-            <motion.div
-              initial={{ opacity: 0, y: 40, scale: 0.96 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.15, ease }}
-              className="relative w-[280px] sm:w-[320px] lg:w-[360px] xl:w-[400px]"
-            >
-              <img
-                src={iPhoneMockup}
-                alt="BRIOO Mobile App"
-                className="w-full h-auto drop-shadow-[0_35px_60px_rgba(15,23,42,0.10)]"
-              />
-            </motion.div>
-          </div>
+          {/* Decorative dashed connector lines (desktop only) */}
+          <svg className="hidden lg:block absolute inset-0 w-full h-full pointer-events-none" preserveAspectRatio="none">
+            {/* Left card to phone */}
+            <line x1="22%" y1="28%" x2="38%" y2="38%" stroke="#cbd5e1" strokeWidth="1" strokeDasharray="6 4" />
+            {/* Right card to phone */}
+            <line x1="78%" y1="28%" x2="62%" y2="38%" stroke="#cbd5e1" strokeWidth="1" strokeDasharray="6 4" />
+            {/* Bottom-left to phone */}
+            <line x1="18%" y1="72%" x2="38%" y2="62%" stroke="#cbd5e1" strokeWidth="1" strokeDasharray="6 4" />
+            {/* Bottom-right to phone */}
+            <line x1="82%" y1="72%" x2="62%" y2="62%" stroke="#cbd5e1" strokeWidth="1" strokeDasharray="6 4" />
+          </svg>
+
+          {/* Phone Mockup — Center */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.25, ease }}
+            className="relative z-20 w-[220px] sm:w-[260px] lg:w-[290px]"
+          >
+            <img
+              src={iPhoneMockup}
+              alt="BRIOO Mobile App"
+              className="w-full h-auto drop-shadow-[0_30px_60px_rgba(15,23,42,0.12)]"
+            />
+          </motion.div>
+
+          {/* Floating Card: Daily Revenue — Top Left */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.4, duration: 0.6, ease }}
+            className="absolute left-0 sm:left-[5%] lg:left-[8%] top-[10%] sm:top-[12%] w-[160px] sm:w-[180px] rounded-xl border border-slate-100 bg-white p-3.5 sm:p-4 shadow-md shadow-slate-200/40 pointer-events-none"
+          >
+            <div className="flex items-center gap-2 mb-1.5">
+              <div className="flex h-6 w-6 items-center justify-center rounded-lg bg-emerald-50 text-emerald-600">
+                <TrendingUp size={12} />
+              </div>
+              <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Daily Revenue</span>
+            </div>
+            <div className="text-lg font-extrabold text-slate-900">R2,450</div>
+            <div className="text-[9px] text-emerald-600 font-bold mt-0.5">+18.4% <span className="text-slate-400 font-normal">from yesterday</span></div>
+          </motion.div>
+
+          {/* Floating Card: Offline Mode — Top Right */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.5, duration: 0.6, ease }}
+            className="absolute right-0 sm:right-[5%] lg:right-[8%] top-[10%] sm:top-[12%] w-[160px] sm:w-[180px] rounded-xl border border-emerald-100 bg-white p-3.5 sm:p-4 shadow-md shadow-slate-200/40 pointer-events-none"
+          >
+            <div className="flex items-center gap-2 mb-1.5">
+              <div className="flex h-6 w-6 items-center justify-center rounded-lg bg-indigo-50 text-indigo-600">
+                <Wifi size={12} />
+              </div>
+              <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Works Offline</span>
+            </div>
+            <div className="flex items-center gap-2 mt-1">
+              <div className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+              <span className="text-xs font-bold text-emerald-600">100% Offline Ready</span>
+            </div>
+          </motion.div>
+
+          {/* Floating Card: Stock Alert — Bottom Left */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.6, duration: 0.6, ease }}
+            className="absolute left-0 sm:left-[3%] lg:left-[6%] bottom-[10%] sm:bottom-[12%] w-[160px] sm:w-[185px] rounded-xl border border-slate-100 bg-white p-3.5 sm:p-4 shadow-md shadow-slate-200/40 pointer-events-none"
+          >
+            <div className="flex items-center gap-2 mb-1.5">
+              <div className="flex h-6 w-6 items-center justify-center rounded-lg bg-amber-50 text-amber-600">
+                <Package size={12} />
+              </div>
+              <span className="text-[10px] font-bold uppercase tracking-wider text-amber-600">Stock Alert</span>
+            </div>
+            <div className="text-xs font-bold text-slate-800">Brown Bread</div>
+            <div className="text-[10px] text-slate-400 font-medium mt-0.5">Only 3 remaining</div>
+          </motion.div>
+
+          {/* Floating Card: Last Sale — Bottom Right */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.7, duration: 0.6, ease }}
+            className="absolute right-0 sm:right-[3%] lg:right-[6%] bottom-[10%] sm:bottom-[12%] w-[160px] sm:w-[185px] rounded-xl border border-slate-100 bg-white p-3.5 sm:p-4 shadow-md shadow-slate-200/40 pointer-events-none"
+          >
+            <div className="flex items-center justify-between mb-1.5">
+              <div className="flex items-center gap-2">
+                <div className="flex h-6 w-6 items-center justify-center rounded-lg bg-indigo-50 text-indigo-600">
+                  <ShoppingCart size={12} />
+                </div>
+                <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Last Sale</span>
+              </div>
+              <span className="text-[8px] font-medium text-slate-400">Just now</span>
+            </div>
+            <div className="flex justify-between items-baseline">
+              <span className="text-xs text-slate-500">1× Kota + Chips</span>
+              <span className="text-sm font-extrabold text-slate-900">R45</span>
+            </div>
+          </motion.div>
 
         </div>
       </div>
