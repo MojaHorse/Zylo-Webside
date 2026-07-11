@@ -33,7 +33,25 @@ const Hero = () => {
       <div className="absolute top-[-120px] left-1/2 -translate-x-1/2 w-[800px] h-[500px] rounded-full bg-indigo-100/30 blur-[140px] pointer-events-none" />
       <div className="absolute bottom-0 right-[-200px] w-[400px] h-[400px] rounded-full bg-emerald-50/40 blur-[120px] pointer-events-none" />
 
+      {/* Faint brand watermark */}
+      <img
+        src="/BRIOO ASSETS/logo_mark_light.svg"
+        className="absolute top-[15%] left-1/2 -translate-x-1/2 w-[500px] sm:w-[700px] h-auto opacity-[0.025] select-none pointer-events-none z-0"
+        alt=""
+      />
+
       <div className="relative z-10 mx-auto max-w-4xl px-6 lg:px-8 text-center">
+        {/* Positioning badge */}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, ease }}
+          className="inline-flex items-center gap-2 rounded-full border border-slate-200/80 bg-white px-4 py-1.5 text-xs font-bold text-slate-600 shadow-xs mb-7"
+        >
+          <span className="text-base leading-none">🇿🇦</span>
+          <span>Built for South African Traders</span>
+        </motion.div>
+
         {/* Headline */}
         <motion.h1
           initial={{ opacity: 0, y: 25 }}
@@ -41,9 +59,9 @@ const Hero = () => {
           transition={{ duration: 0.7, ease }}
           className="text-4xl font-extrabold leading-[1.1] tracking-tight text-slate-900 sm:text-5xl md:text-6xl lg:text-[4.25rem]"
         >
-          Your Phone-First
+          Run Your Hustle
           <br />
-          <span className="text-gradient">Point of Sale</span>
+          <span className="text-gradient">Like a Business</span>
         </motion.h1>
 
         {/* Subtitle */}
@@ -53,7 +71,7 @@ const Hero = () => {
           transition={{ duration: 0.6, delay: 0.1, ease }}
           className="mt-6 text-base leading-relaxed text-slate-500 sm:text-lg max-w-xl mx-auto font-medium"
         >
-          BRIOO helps everyday South African traders record sales, track stock and cash up — right from your phone, even offline.
+          Whether you run a spaza shop, food stall, or salon — BRIOO turns your phone into a full point-of-sale. Record every sale, track your stock, and cash up at the end of the day. No internet needed.
         </motion.p>
 
         {/* CTAs */}
@@ -67,14 +85,14 @@ const Hero = () => {
             to="/pilot"
             className="group inline-flex items-center justify-center gap-2 rounded-full bg-indigo-600 px-8 py-3.5 text-sm font-bold text-white shadow-lg shadow-indigo-200/50 hover:bg-indigo-700 hover:shadow-indigo-300/60 transition-all duration-300 active:scale-[0.97]"
           >
-            Get started
+            Join the Trader Pilot
             <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-0.5" />
           </Link>
           <Link
             to="/features"
             className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-8 py-3.5 text-sm font-bold text-slate-700 shadow-xs hover:border-indigo-300 hover:text-indigo-600 transition-all duration-200"
           >
-            View features
+            See How It Works
           </Link>
         </motion.div>
       </div>
