@@ -1,16 +1,16 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Shield } from "lucide-react";
+import { Menu, X, Shield, Home, Sparkles, Tag, Users, Rocket, Download, Mail } from "lucide-react";
 
 const navLinks = [
-  { name: "Home", path: "/" },
-  { name: "Features", path: "/features" },
-  { name: "Pricing", path: "/pricing" },
-  { name: "About", path: "/about" },
-  { name: "Pilot", path: "/pilot" },
-  { name: "Download", path: "/download" },
-  { name: "Contact", path: "/contact" },
+  { name: "Home", path: "/", Icon: Home },
+  { name: "Features", path: "/features", Icon: Sparkles },
+  { name: "Pricing", path: "/pricing", Icon: Tag },
+  { name: "About", path: "/about", Icon: Users },
+  { name: "Pilot", path: "/pilot", Icon: Rocket },
+  { name: "Download", path: "/download", Icon: Download },
+  { name: "Contact", path: "/contact", Icon: Mail },
 ];
 
 const Header = () => {
@@ -43,7 +43,7 @@ const Header = () => {
           <img
             src="/Logo_Horizontal.svg"
             alt="BRIOO"
-            className="h-9 w-auto transition-transform duration-200 group-hover:scale-105"
+            className="h-[46px] w-auto transition-transform duration-200 group-hover:scale-105"
           />
         </Link>
 
@@ -53,19 +53,21 @@ const Header = () => {
             <Link
               key={link.path}
               to={link.path}
-              className={`text-[0.9rem] font-semibold transition-colors duration-200 hover:text-indigo-600 ${
+              className={`text-[0.9rem] font-semibold transition-colors duration-200 hover:text-indigo-600 flex items-center gap-1.5 ${
                 location.pathname === link.path
                   ? "text-indigo-600"
                   : "text-slate-600"
               }`}
             >
+              <link.Icon size={15} className="opacity-70" />
               {link.name}
             </Link>
           ))}
           <Link
             to="/pilot"
-            className="rounded-full bg-indigo-600 px-6 py-2.5 text-sm font-bold text-white shadow-lg shadow-indigo-200/60 transition-all duration-200 hover:bg-indigo-700 hover:shadow-indigo-300/60 active:scale-95"
+            className="rounded-full bg-indigo-600 px-6 py-2.5 text-sm font-bold text-white shadow-lg shadow-indigo-200/60 transition-all duration-200 hover:bg-indigo-700 hover:shadow-indigo-300/60 active:scale-95 flex items-center gap-1.5"
           >
+            <Rocket size={14} />
             Join the Pilot
           </Link>
         </div>
@@ -95,19 +97,21 @@ const Header = () => {
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`rounded-xl px-4 py-3 text-base font-bold transition-colors ${
+                  className={`rounded-xl px-4 py-3 text-base font-bold transition-colors flex items-center gap-3 ${
                     location.pathname === link.path
                       ? "bg-indigo-50 text-indigo-600"
                       : "text-slate-900 hover:bg-slate-50"
                   }`}
                 >
+                  <link.Icon size={20} className={location.pathname === link.path ? "text-indigo-600" : "text-slate-400"} />
                   {link.name}
                 </Link>
               ))}
               <Link
                 to="/pilot"
-                className="mt-3 block w-full rounded-2xl bg-indigo-600 py-4 text-center font-bold text-white shadow-lg shadow-indigo-200/50"
+                className="mt-3 w-full rounded-2xl bg-indigo-600 py-4 text-center font-bold text-white shadow-lg shadow-indigo-200/50 flex items-center justify-center gap-2"
               >
+                <Rocket size={18} />
                 Join the Pilot
               </Link>
             </div>
@@ -129,7 +133,7 @@ const Footer = () => {
               <img
                 src="/Logo_Horizontal.svg"
                 alt="BRIOO"
-                className="h-8 w-auto"
+                className="h-[36px] w-auto"
               />
             </div>
             <p className="text-[0.95rem] font-semibold text-slate-800 mb-2">
