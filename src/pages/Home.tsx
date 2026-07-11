@@ -2,11 +2,11 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  ArrowRight, ShoppingCart, Package, BarChart3, Receipt,
-  Calculator, Zap, CheckCircle2,
-  Wifi, ChevronRight, Store, Plus, Sparkles, TrendingUp, ChevronDown,
-  WifiOff, MessageSquare, BatteryCharging, Shield, Star,
-  Send, AlertCircle, Loader2, X, Lock, Grid
+  ArrowRight, ShoppingCart, Package, CheckCircle2,
+  Calculator, Zap, Wifi, ChevronRight, Store, Plus,
+  Sparkles, TrendingUp, WifiOff, MessageSquare,
+  BatteryCharging, Shield, Star, Send, AlertCircle,
+  Loader2, X, Lock
 } from "lucide-react";
 import { collection, addDoc } from "firebase/firestore";
 import { db, analytics } from "../firebase";
